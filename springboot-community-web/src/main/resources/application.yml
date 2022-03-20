@@ -1,2 +1,31 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+  h2:
+    console:
+      enabled: true
+      path: /console
+  devtools:
+    livereload:
+      enabled: true
+  thymeleaf:
+      cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id:
+            client-secret:
+          facebook:
+            client-id:
+            client-secret:
+  main:
+    allow-circular-references: true #순환참조
+custom:
+  oauth2:
+    kakao:
+      client-id:
 server:
   port: 8081

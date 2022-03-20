@@ -1,5 +1,7 @@
 package com.example.springbootweb.controller;
 
+import com.example.springbootweb.annotation.SocialUser;
+import com.example.springbootweb.domain.User;
 import com.example.springbootweb.service.BoardService;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -30,7 +32,7 @@ public class BoardController {
     }
 
     @GetMapping("/list")
-    public String list(@PageableDefault Pageable pageable, Model model) {
+    public String list(@PageableDefault Pageable pageable, @SocialUser User user, Model model) {
         model.addAttribute("boardList", boardService.findBoardList(pageable));
         return "board/list";
     }
